@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "position_teleport_info",
+    "version": "1.0",
+    "name": "传送包状态现实",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "position_teleport_info.plugin.mixins.json"
+    ]
+  }

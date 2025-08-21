@@ -201,8 +201,8 @@ class AppGameProvider : GameProvider {
     }
 
     companion object {
-        const val CLIENT_ENTRYPOINT: String = "net.nekocurit.loli_ac_server.LoliServerLoader"
-        val ENTRYPOINTS: Array<String?> = arrayOf<String?>(CLIENT_ENTRYPOINT)
+        const val CLIENT_ENTRYPOINT: String = "org.bukkit.craftbukkit.Main"
+        val ENTRYPOINTS: Array<String> = arrayOf<String>(CLIENT_ENTRYPOINT)
 
         const val PROPERTY_APP_DIRECTORY: String = "appDirectory"
 

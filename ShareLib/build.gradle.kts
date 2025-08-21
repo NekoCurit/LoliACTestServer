@@ -5,6 +5,8 @@ plugins {
 dependencies {
     implementation("org.apache.logging.log4j:log4j-core:2.25.1")
     implementation("org.apache.logging.log4j:log4j-api:2.25.1")
+
+    compileOnly(fileTree("${rootProject.projectDir}/libs") { include("*.jar") })
 }
 
 tasks {
@@ -15,7 +17,7 @@ tasks {
     }
 
     jar {
-        archiveBaseName.set("loli-server")
+        archiveBaseName.set("loli-share-lib")
         dependsOn(copyDeps)
     }
 }

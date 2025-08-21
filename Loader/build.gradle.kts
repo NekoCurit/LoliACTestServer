@@ -34,6 +34,8 @@ tasks {
             attributes("Main-Class" to application.mainClass.get())
         }
 
+        mergeServiceFiles()
+
         relocate("com.google", "net.nekocurit.lib.com.google")
     }
 }
