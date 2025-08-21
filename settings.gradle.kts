@@ -15,4 +15,4 @@ pluginManagement {
     }
 }
 
-include( ":Loader", ":ShareLib", ":Mod", ":ModPositionTeleportInfo")
+include( ":Loader", ":ShareLib", ":ModPositionTeleportInfo", ":ModScoreboard")

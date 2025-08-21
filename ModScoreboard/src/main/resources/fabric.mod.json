@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "scoreboard",
+    "version": "1.0",
+    "name": "显示计分板",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "scoreboard.plugin.mixins.json"
+    ]
+  }

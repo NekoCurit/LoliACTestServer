@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.nekocurit.loli_ac_server.plugin.scoreboard.mixin",
+    "mixins": [
+        "MixinEntityPlayer",
+        "MixinNetworkManager",
+        "MixinPlayerConnection"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
