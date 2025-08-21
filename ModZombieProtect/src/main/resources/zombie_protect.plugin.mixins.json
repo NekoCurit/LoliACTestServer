@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.nekocurit.loli_ac_server.plugin.zombie_protect.mixin",
+    "mixins": [
+        "MixinEntity",
+        "MixinEntityLiving",
+        "MixinEntityZombie"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

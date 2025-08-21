@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "zombie_protect",
+    "version": "1.0",
+    "name": "避免僵尸燃烧和移动",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "zombie_protect.plugin.mixins.json"
+    ]
+  }
