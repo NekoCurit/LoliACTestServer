@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.nekocurit.loli_ac_server.plugin.use_progress.mixin",
+    "mixins": [
+        "MixinEntityHuman"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

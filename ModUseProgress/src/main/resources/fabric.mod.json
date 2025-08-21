@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "use_progress",
+    "version": "1.0",
+    "name": "输出物品的使用状态",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "use_progress.plugin.mixins.json"
+    ]
+  }
