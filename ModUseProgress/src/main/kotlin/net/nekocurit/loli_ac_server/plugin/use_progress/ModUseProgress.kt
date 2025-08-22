@@ -12,7 +12,7 @@ object ModUseProgress {
         player.sendActionBar(StringBuilder().apply {
             append("${ChatColor.LIGHT_PURPLE}使用物品中 ")
             append("${ChatColor.WHITE}| ")
-            append("${ChatColor.LIGHT_PURPLE}物品类名: ${item.javaClass.simpleName} ")
+            append("${ChatColor.LIGHT_PURPLE}物品类名: ${item.item.javaClass.simpleName} ")
             append("${ChatColor.WHITE}| ")
             append("${ChatColor.LIGHT_PURPLE}状态数据: $progress")
         }.toString());
