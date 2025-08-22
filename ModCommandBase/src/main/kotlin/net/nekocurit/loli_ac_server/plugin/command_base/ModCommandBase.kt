@@ -15,20 +15,20 @@ object ModCommandBase {
     @JvmStatic
     fun registerCommand(command: Command) {
         command.root.forEach { root ->
-            commands[root] = command
+            commands[root.lowercase()] = command
         }
     }
 
     @JvmStatic
     fun onCommand(player: EntityPlayer, command: String): Boolean {
         val args = command.removePrefix("/").split(" ").toTypedArray()
-        return commands[args.getOrNull(0)]?.execute(player, args.drop(1))?.let { true } ?: false
+        return commands[args.getOrNull(0)?.lowercase()]?.execute(player, args.drop(1))?.let { true } ?: false
     }
 
     @JvmStatic
     fun onTabComplete(player: EntityPlayer, command: String, trigger: BlockPosition?): List<String>? {
         val args = command.removePrefix("/").split(" ").toTypedArray()
-        return commands[args.getOrNull(0)]?.complete(player, args.drop(1), trigger)
+        return commands[args.getOrNull(0)?.lowercase()]?.complete(player, args.drop(1), trigger)
     }
 
 }
