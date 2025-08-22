@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_ender_chest",
+    "version": "1.0",
+    "name": "命令/便携末影箱",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_ender_chest.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}
