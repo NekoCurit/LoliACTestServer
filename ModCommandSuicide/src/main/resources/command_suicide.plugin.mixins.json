@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.nekocurit.loli_ac_server.plugin.command_suicide.mixin",
+  "mixins": [
+    "MixinMinecraftServer"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

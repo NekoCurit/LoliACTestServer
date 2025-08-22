@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_suicide",
+    "version": "1.0",
+    "name": "命令/自我了结",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_suicide.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}
