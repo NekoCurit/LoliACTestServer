@@ -4,7 +4,6 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     kotlin("jvm")
-    application
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
@@ -47,7 +46,6 @@ tasks.register<Copy>("copyDeps") {
     from(configurations.runtimeClasspath)
     into("build/launch/deps/")
 }
-
 
 tasks.register("generate") {
     group = "build"

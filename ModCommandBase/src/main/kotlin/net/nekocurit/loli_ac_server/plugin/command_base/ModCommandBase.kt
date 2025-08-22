@@ -14,7 +14,9 @@ object ModCommandBase {
 
     @JvmStatic
     fun registerCommand(command: Command) {
-        commands[command.root] = command
+        command.root.forEach { root ->
+            commands[root] = command
+        }
     }
 
     @JvmStatic

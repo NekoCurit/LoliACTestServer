@@ -7,7 +7,7 @@ import net.nekocurit.loli_ac_server.plugin.command_items.ModCommandItems.ITEMS
 import org.bukkit.Bukkit
 import org.bukkit.event.inventory.InventoryType
 
-class CommandItems: Command("items", "快速获取物品") {
+class CommandItems: Command(listOf("i", "items"), "", "快速获取物品") {
 
     override fun execute(player: EntityPlayer, args: List<String>) {
         Bukkit.createInventory(null, InventoryType.CHEST, CONTAINER_TITLE)

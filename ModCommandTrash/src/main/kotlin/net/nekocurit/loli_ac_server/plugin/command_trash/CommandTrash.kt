@@ -6,7 +6,7 @@ import net.nekocurit.loli_ac_server.plugin.command_trash.ModCommandTrash.CONTAIN
 import org.bukkit.Bukkit
 import org.bukkit.event.inventory.InventoryType
 
-class CommandTrash: Command("trash", "清理垃圾") {
+class CommandTrash: Command(listOf("trash"), "", "清理垃圾") {
 
     override fun execute(player: EntityPlayer, args: List<String>) {
         player.bukkitEntity.openInventory(Bukkit.createInventory(null, InventoryType.CHEST, CONTAINER_TITLE))
