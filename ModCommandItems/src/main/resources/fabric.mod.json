@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_items",
+    "version": "1.0",
+    "name": "命令/快速获取物品",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_items.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}

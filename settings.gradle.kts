@@ -15,4 +15,8 @@ pluginManagement {
     }
 }
 
-include( ":Loader", ":ShareLib", ":ModPositionTeleportInfo", ":ModScoreboard", ":ModZombieProtect", ":ModUseProgress", ":ModCommandBase", ":ModCommandTrash")
+include(
+    ":Loader", ":ShareLib",
+    ":ModPositionTeleportInfo", ":ModScoreboard", ":ModZombieProtect", ":ModUseProgress",
+    ":ModCommandBase", ":ModCommandTrash", ":ModCommandItems"
+)
