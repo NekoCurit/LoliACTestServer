@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_fly",
+    "version": "1.0",
+    "name": "命令/开关飞行模式",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_fly.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}

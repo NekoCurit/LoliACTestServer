@@ -10,6 +10,8 @@ import java.util.WeakHashMap
 
 object ModCommandBase {
 
+    val prefix = "${ChatColor.LIGHT_PURPLE}Loli ${ChatColor.GRAY}>> ${ChatColor.WHITE}"
+
     val commands = hashMapOf<String, Command>()
 
     @JvmStatic
@@ -29,6 +31,11 @@ object ModCommandBase {
     fun onTabComplete(player: EntityPlayer, command: String, trigger: BlockPosition?): List<String>? {
         val args = command.removePrefix("/").split(" ").toTypedArray()
         return commands[args.getOrNull(0)?.lowercase()]?.complete(player, args.drop(1), trigger)
+    }
+
+    @JvmStatic
+    fun EntityPlayer.sendCommandResponse(message: String) {
+        this.sendMessage(ChatComponentText("$prefix$message"))
     }
 
 }
