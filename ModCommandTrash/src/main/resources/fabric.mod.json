@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_trash",
+    "version": "1.0",
+    "name": "命令/垃圾桶",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_trash.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}

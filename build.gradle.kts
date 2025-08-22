@@ -24,9 +24,14 @@ subprojects {
     if (name in listOf("Loader", "ShareLib")) return@subprojects
 
     dependencies {
-        implementation(fileTree("${rootProject.projectDir}/libs") { include("*.jar") })
-        implementation("org.spongepowered:mixin:0.8.5")
-        implementation(project(":ShareLib"))
+        compileOnly(fileTree("${rootProject.projectDir}/libs") { include("*.jar") })
+        compileOnly("org.spongepowered:mixin:0.8.5")
+
+        compileOnly("net.fabricmc:fabric-loader:0.13.3")
+        compileOnly("net.fabricmc:tiny-mappings-parser:0.2.2.14")
+        compileOnly("net.fabricmc:access-widener:2.1.0")
+
+        compileOnly(project(":ShareLib"))
     }
 }
 

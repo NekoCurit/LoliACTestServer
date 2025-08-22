@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "command_base",
+    "version": "1.0",
+    "name": "命令基础",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_base.plugin.mixins.json"
+    ]
+  }
