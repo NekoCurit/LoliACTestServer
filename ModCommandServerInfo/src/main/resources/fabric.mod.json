@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_server_info",
+    "version": "1.0",
+    "name": "命令/服务器信息",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_server_info.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}
