@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.nekocurit.loli_ac_server.plugin.client_brand.mixin",
+    "mixins": [
+        "MixinPlayerConnection"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "client_brand",
+    "version": "1.0",
+    "name": "输出客户端标识",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "client_brand.plugin.mixins.json"
+    ]
+  }
