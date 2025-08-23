@@ -16,17 +16,20 @@ object ModScoreboard {
 
     @JvmStatic
     fun EntityPlayer.tick() {
+        this.airTicks
         val statistics = multiStatisticsManager.getPlayerDataOrCreate(this)
 
         scoreboards
             .getOrPut(this) { PlayerScoreboard(this) }
                 .update("", mutableListOf<String>().apply {
+                    this.
                     add("${ChatColor.WHITE}${ChatColor.WHITE}")
                     add("${ChatColor.WHITE}Health: ${ChatColor.GREEN}${String.format("%.2f", health)}/${maxHealth}")
+                    add("${ChatColor.WHITE}Motion: ${ChatColor.GREEN}${String.format("%.2f", motX)}, ${String.format("%.2f", motY)}, ${String.format("%.2f", motZ)}")
                     add("${ChatColor.WHITE}HurtTime: ${ChatColor.GREEN}$noDamageTicks/${maxNoDamageTicks}")
                     add("${ChatColor.WHITE}CPS: ${ChatColor.GREEN}${statistics.cps.get(1000)}")
-                    //add("${ChatColor.WHITE}BPS: ${ChatColor.GREEN}${ACTest.statisticsManager.getPlayerData(player).bps.getFormated(1, 2)}")
-                    add("${ChatColor.WHITE}PPS I/O: ${ChatColor.GREEN}${statistics.ppsIn.get(1000)}/${statistics.ppsOut.get(1000)}")
+                    add("${ChatColor.WHITE}BPS: ${ChatColor.GREEN}${statistics.bps.getFormated(2)}")
+                    add("${ChatColor.WHITE}PPS ${ChatColor.GRAY}I${ChatColor.WHITE}/${ChatColor.GRAY}O${ChatColor.WHITE}: ${ChatColor.GREEN}${statistics.ppsIn.get(1000)}/${statistics.ppsOut.get(1000)}")
                     add("${ChatColor.WHITE}")
                     add("${ChatColor.WHITE}在地面: ${yesOrNo(onGround)}")
                     add("${ChatColor.WHITE}潜行中: ${yesOrNo(isSneaking)}")

@@ -12,7 +12,10 @@ public abstract class MixinEntityPlayer {
 
     @Inject(method = "t_", at = @At("HEAD"))
     private void tick$pre(CallbackInfo ci) {
-        ModScoreboard.tick((EntityPlayer)(Object)this);
+        final EntityPlayer player = (EntityPlayer)(Object) this;
+
+        ModScoreboard.multiStatisticsManager.getPlayerDataOrCreate(player).getBps().add(player);
+        ModScoreboard.tick(player);
     }
 
 }

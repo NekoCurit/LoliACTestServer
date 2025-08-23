@@ -17,7 +17,7 @@ public abstract class MixinPlayerConnection {
     public EntityPlayer player;
 
     @Inject(method = "sendPacket", at = @At("HEAD"))
-    private void injectGetGreeting(Packet packet, CallbackInfo ci) {
+    private void sendPacket$logPpsIn(Packet packet, CallbackInfo ci) {
         ModScoreboard.multiStatisticsManager.getPlayerDataOrCreate(this.player).getPpsIn().add();
     }
 

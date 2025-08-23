@@ -15,7 +15,7 @@ public abstract class MixinNetworkManager {
     @Shadow private PacketListener m;
 
     @Inject(method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/server/v1_8_R3/Packet;)V", at = @At("HEAD"))
-    private void channelRead0$statistics(ChannelHandlerContext channelhandlercontext, Packet object, CallbackInfo ci) {
+    private void channelRead0$log(ChannelHandlerContext channelhandlercontext, Packet object, CallbackInfo ci) {
         if (this.m instanceof PlayerConnection) {
             final PlayerConnection connection = (PlayerConnection) this.m;
 

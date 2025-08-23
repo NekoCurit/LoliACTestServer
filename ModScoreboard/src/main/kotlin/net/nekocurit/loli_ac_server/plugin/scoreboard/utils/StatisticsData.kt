@@ -4,4 +4,5 @@ data class StatisticsData(
     var ppsIn: DelayStatisticsData = DelayStatisticsData(),
     var ppsOut: DelayStatisticsData = DelayStatisticsData(),
     var cps: DelayStatisticsData = DelayStatisticsData(),
+    val bps: SpeedStatisticsData = SpeedStatisticsData()
 )

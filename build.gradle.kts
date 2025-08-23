@@ -2,6 +2,13 @@
 
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
+val libs = arrayOf(
+    "org.apache.logging.log4j:log4j-core:2.25.1",
+    "org.apache.logging.log4j:log4j-api:2.25.1",
+
+    "org.apache.commons:commons-collections4:4.5.0"
+)
+
 plugins {
     kotlin("jvm")
     id("com.github.johnrengelman.shadow") version "8.1.1"
@@ -30,12 +37,19 @@ subprojects {
         compileOnly("net.fabricmc:tiny-mappings-parser:0.2.2.14")
         compileOnly("net.fabricmc:access-widener:2.1.0")
 
+        libs.forEach { lib ->
+            compileOnly(lib)
+        }
+
         compileOnly(project(":ShareLib"))
     }
 }
 
 dependencies {
     implementation("org.spongepowered:mixin:0.8.5")
+    libs.forEach { lib ->
+        implementation(lib)
+    }
 }
 
 group = "net.nekocurit.loli_ac_server"
@@ -51,7 +65,7 @@ tasks.register("generate") {
     group = "build"
     description = "生成可执行版本"
 
-    dependsOn(":Loader:shadowJar", ":ShareLib:jar")
+    dependsOn(":Loader:shadowJar", ":ShareLib:jar", ":copyDeps")
 
     doLast {
         val outputDir = layout.buildDirectory.dir("launch").get().asFile
@@ -75,15 +89,6 @@ tasks.register("generate") {
         project(":ShareLib").tasks.named<Jar>("jar").get().archiveFile.get().asFile
             .apply {
                 copyTo(depsDir.resolve(name), overwrite = true)
-            }
-
-        project(":ShareLib").tasks.named<Copy>("copyDeps").get().destinationDir
-            .apply {
-
-
-                listFiles().forEach { file ->
-                    file.copyTo(depsDir.resolve(file.name), overwrite = true)
-                }
             }
 
         outputDir.resolve("start.bat").writeText("""
