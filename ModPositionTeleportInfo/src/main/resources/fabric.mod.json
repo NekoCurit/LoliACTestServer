@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "position_teleport_info",
     "version": "1.0",
-    "name": "传送包状态现实",
+    "name": "传送包状态显示",
     "description": "",
     "authors": [
       "NekoCurit"
