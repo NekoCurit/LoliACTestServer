@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "command_velocity",
+    "version": "1.0",
+    "name": "命令/设置击退动能",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "command_velocity.plugin.mixins.json"
+    ],
+    "depends": {
+      "command_base": "*"
+    }
+}

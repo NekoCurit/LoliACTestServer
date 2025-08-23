@@ -18,5 +18,5 @@ pluginManagement {
 include(
     ":Loader", ":ShareLib",
     ":ModPositionTeleportInfo", ":ModScoreboard", ":ModZombieProtect", ":ModUseProgress", ":ModClientBrand",
-    ":ModCommandBase", ":ModCommandTrash", ":ModCommandItems", ":ModCommandSpawn", ":ModCommandSuicide", ":ModCommandEnderChest", ":ModCommandFly", ":ModCommandServerInfo"
+    ":ModCommandBase", ":ModCommandTrash", ":ModCommandItems", ":ModCommandSpawn", ":ModCommandSuicide", ":ModCommandEnderChest", ":ModCommandFly", ":ModCommandServerInfo", ":ModCommandVelocity"
 )
