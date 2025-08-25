@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.nekocurit.loli_ac_server.plugin.grass_block_keeper.mixin",
+    "mixins": [
+        "MixinBlockGrass"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

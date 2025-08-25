@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "grass_block_keeper",
+    "version": "1.0",
+    "name": "阻止草方块状态变化",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "grass_block_keeper.plugin.mixins.json"
+    ]
+  }
