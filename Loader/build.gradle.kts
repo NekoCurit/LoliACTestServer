@@ -24,7 +24,5 @@ tasks {
         }
 
         mergeServiceFiles()
-
-        relocate("com.google", "net.nekocurit.lib.com.google")
     }
 }
