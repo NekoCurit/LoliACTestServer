@@ -18,56 +18,30 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.stream.Collectors
 import java.util.zip.ZipFile
-import kotlin.streams.toList
 
 class AppGameProvider : GameProvider {
     private var arguments: Arguments? = null
     private var appJar: Path? = null
 
-    /*
-     * Display an identifier for the app.
-     */
     override fun getGameId() = "server"
 
-    /*
-     * Display a readable name for the app.
-     */
-    override fun getGameName(): String {
-        return "Hello World"
-    }
+    override fun getGameName() = "Minecraft"
 
-    /*
-     * Display a raw version string that may include build numbers or git hashes.
-     */
-    override fun getRawGameVersion(): String {
-        return "1.0.0-abcdef"
-    }
+    override fun getRawGameVersion() = "paper-1.8"
 
-    /*
-     * Display a clean version string for display.
-     */
-    override fun getNormalizedGameVersion(): String {
-        return "1.0.0"
-    }
+    override fun getNormalizedGameVersion() = "1.8"
 
-    /*
-     * Provides built-in mods, for example a mod that represents the app itself so
-     * that mods can depend on specific versions.
-     */
-    override fun getBuiltinMods(): MutableCollection<BuiltinMod?> {
-        val contactMap = HashMap<String?, String?>()
-        contactMap.put("homepage", "https://elitemastereric.com/")
-
-        val modMetadata = BuiltinModMetadata.Builder(gameId, normalizedGameVersion)
-            .setName(gameName)
-            .addAuthor("EliteMasterEric", contactMap)
-            .setContact(ContactInformationImpl(contactMap))
-            .setDescription("A simple Hello World app for Fabric Loader.")
-
-        val mod = BuiltinMod(mutableListOf(appJar), modMetadata.build())
-
-        return mutableListOf(mod)
-    }
+    override fun getBuiltinMods() = mutableListOf(
+        BuiltinMod(
+            mutableListOf(appJar),
+            BuiltinModMetadata.Builder(gameId, normalizedGameVersion)
+                .setName(gameName)
+                .addAuthor("NekoCurit", emptyMap<String, String>())
+                .setContact(ContactInformationImpl(emptyMap<String, String>()))
+                .setDescription("A simple Hello World app for Fabric Loader.")
+                .build()
+        )
+    )
 
     /*
      * Provides the full class name of the app's entrypoint.
@@ -89,16 +63,11 @@ class AppGameProvider : GameProvider {
         return Companion.getLaunchDirectory(arguments!!)
     }
 
-    /*
-     * Return true if the app needs to be deobfuscated.
-     */
-    override fun isObfuscated(): Boolean {
-        return false
-    }
-
     override fun requiresUrlClassLoader(): Boolean {
         return false
     }
+
+    override fun getBuiltinTransforms(className: String) = setOf<GameProvider.BuiltinTransform>()
 
     override fun isEnabled(): Boolean {
         return true
@@ -152,16 +121,9 @@ class AppGameProvider : GameProvider {
      * Add additional configuration to the FabricLauncher, but do not launch your
      * app.
      */
-    override fun initialize(launcher: FabricLauncher?) {
-        TRANSFORMER.locateEntrypoints(launcher, appJar)
-    }
+    override fun initialize(launcher: FabricLauncher) = TRANSFORMER.locateEntrypoints(launcher, listOf(appJar))
 
-    /*
-     * Return a GameTransformer that does extra modification on the app's JAR.
-     */
-    override fun getEntrypointTransformer(): GameTransformer {
-        return TRANSFORMER
-    }
+    override fun getEntrypointTransformer() = TRANSFORMER
 
     /*
      * Called after transformers were initialized and mods were detected and loaded

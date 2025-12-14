@@ -6,12 +6,12 @@ val libs = arrayOf(
     "org.apache.logging.log4j:log4j-core:2.25.1",
     "org.apache.logging.log4j:log4j-api:2.25.1",
 
-    "org.apache.commons:commons-collections4:4.5.0"
+    "org.apache.commons:commons-collections4:4.5.0",
 )
 
 plugins {
     kotlin("jvm")
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("com.gradleup.shadow")
 }
 
 allprojects {
@@ -21,7 +21,6 @@ allprojects {
 
     repositories {
         mavenCentral()
-        maven("https://repo.spongepowered.org/repository/maven-public/")
         maven("https://maven.fabricmc.net/")
     }
 }
@@ -31,9 +30,9 @@ subprojects {
 
     dependencies {
         compileOnly(fileTree("${rootProject.projectDir}/libs") { include("*.jar") })
-        compileOnly("org.spongepowered:mixin:0.8.5")
+        implementation("net.fabricmc:sponge-mixin:0.16.5+mixin.0.8.7")
 
-        compileOnly("net.fabricmc:fabric-loader:0.13.3")
+        compileOnly("net.fabricmc:fabric-loader:0.17.3")
         compileOnly("net.fabricmc:tiny-mappings-parser:0.2.2.14")
         compileOnly("net.fabricmc:access-widener:2.1.0")
 
@@ -46,7 +45,8 @@ subprojects {
 }
 
 dependencies {
-    implementation("org.spongepowered:mixin:0.8.5")
+    implementation("net.fabricmc:sponge-mixin:0.16.5+mixin.0.8.7")
+    implementation("io.github.llamalad7:mixinextras-forge:0.5.0")
     libs.forEach { lib ->
         implementation(lib)
     }
@@ -94,6 +94,10 @@ tasks.register("generate") {
         outputDir.resolve("start.bat").writeText("""
             @echo off
             java.exe -Dfabric.skipMcProvider=true -classpath "loli-loader.jar;deps/*" net.fabricmc.loader.launch.knot.KnotClient
+        """.trimIndent())
+        outputDir.resolve("start.sh").writeText("""
+            #!/bin/sh
+            java -Dfabric.skipMcProvider=true -classpath "loli-loader.jar:deps/*" net.fabricmc.loader.launch.knot.KnotClient
         """.trimIndent())
     }
 }
