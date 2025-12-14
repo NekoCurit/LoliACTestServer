@@ -19,7 +19,7 @@ pluginManagement {
 
 include(
     ":Loader", ":ShareLib",
-    ":ModPositionTeleportInfo", ":ModScoreboard", ":ModUseProgress", ":ModClientBrand",
+    ":ModPositionTeleportInfo", ":ModScoreboard", ":ModUseProgress", ":ModClientBrand", ":ModRemoveClickLimit",
     ":ModZombieProtect", ":ModGrassBlockKeeper",
     ":ModCommandBase", ":ModCommandTrash", ":ModCommandItems", ":ModCommandSpawn", ":ModCommandSuicide", ":ModCommandEnderChest", ":ModCommandFly", ":ModCommandServerInfo", ":ModCommandVelocity"
 )

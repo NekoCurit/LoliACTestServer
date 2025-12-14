@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "id": "test",
+    "version": "1.0",
+    "name": "删除容器点击限制",
+    "description": "",
+    "authors": [
+      "NekoCurit"
+    ],
+    "contact": {
+      "homepage": "https://github.com/nekocurit"
+    },
+    "environment": "*",
+    "mixins": [
+      "remove_click_limit.plugin.mixins.json"
+    ]
+  }
